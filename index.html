@@ -159,18 +159,18 @@ img{max-width:100%}
 <header class="hero"><div class="container">
 <span class="kicker">2026.10.24 – 10.26 · 光復節連假</span>
 <h1>桃園三日微健行<br>山林瀑布 × 高分美食</h1>
-<p class="sub">結合平緩步道、高分餐廳與順暢的開車動線。出發前記得帶上雙筒望遠鏡，以<span style="font-weight:700">瀚凱的RAV4</span>從韋廷家出發，展開這趟山林放鬆之旅。</p>
+<p class="sub">結合平緩步道、高分餐廳與順暢的開車動線。出發前記得帶上雙筒望遠鏡，以<span style="font-weight:700">瀚凱的RAV4</span>從韋廷家（桃園龍潭）出發，展開這趟山林放鬆之旅。</p>
 <div class="stats">
 <div class="stat"><b>3 天 2 夜</b>平緩步道・不爬山</div>
 <div class="stat"><b>3 大主題</b>山林瀑布／城市夜景／茶園丘陵</div>
-<div class="stat"><b>10/23 晚</b>先到韋廷家（台中）</div>
+<div class="stat"><b>10/23 晚</b>先到韋廷家（桃園龍潭）</div>
 <div class="stat"><b>🚗 車輛</b>瀚凱 RAV4</div>
 </div>
 </div></header>
 
 <section id="days"><div class="container">
 <div class="sec-title"><span class="no">01</span><h2>三日行程</h2></div>
-<p class="sec-sub">每日動線由高海拔往平地或市區推進，開車時間皆控制在 1 小時內，輕鬆不趕路。每日從韋廷家出發，全程以瀚凱的RAV4代步。</p>
+<p class="sec-sub">每日動線由高海拔往平地或市區推進，開車時間皆控制在 1 小時內，輕鬆不趕路。每日從韋廷家（龍潭）出發，全程以瀚凱的RAV4代步。</p>
 <div id="daylist"></div>
 </div></section>
 
@@ -243,13 +243,13 @@ img{max-width:100%}
 <li>到 <b>Google 我的地圖</b>（mymaps.google.com）→「建立新地圖」→「匯入」→ 選擇該檔案</li>
 <li>或直接用手機 <b>Google Maps App</b> 搜尋 <b>「我的地點」</b>，也能匯入 geojson/kml</li>
 </ol>
-<p class="map-note">點位座標為路口級定位，實際以店家招牌為準。所有行程皆從韋廷家（台中）出發，每日結束後返回韋廷家。</p>
+<p class="map-note">點位座標為路口級定位，實際以店家招牌為準。所有行程皆從韋廷家（龍潭）出發，每日結束後返回韋廷家。</p>
 </div>
 </div></section>
 
 <footer><div class="container">
 <div><b>2026 光復節連假・桃園三日登山</b>（10/24–10/26）｜Hermes Agent Ryzen 製</div>
-<div>車輛：瀚凱 RAV4 ｜ 住宿：韋廷家（台中）</div>
+<div>車輛：瀚凱 RAV4 ｜ 住宿：韋廷家（桃園龍潭）</div>
 <div>圖片：Wikimedia Commons（CC 授權，部分為示意）</div>
 </div></footer>
 
@@ -262,12 +262,12 @@ const IMG={
  d3:"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Views_from_Jioufen-04.2023-09-20.jpg/960px-Views_from_Jioufen-04.2023-09-20.jpg"
 };
 
-/* 韋廷家座標（台中市區，實際以韋廷提供為準） */
-const WEITING={lat:24.1470,lng:120.6750,name:"韋廷家（住宿起點）"};
+/* 韋廷家座標（桃園市龍潭區文化路1142巷6號） */
+const WEITING={lat:24.8620,lng:121.2140,name:"韋廷家（龍潭文化路1142巷6號）"};
 
 const DAYS=[
  {no:1,date:"10/24",wd:"六",title:"復興區山林瀑布與大溪茶香",img:IMG.d1,
-  route:"10/23 晚先到韋廷家（台中）休息，10/24 早上從韋廷家出發，開瀚凱的RAV4北上，全程順暢。",
+  route:"10/23 晚先到韋廷家（龍潭文化路1142巷6號）休息，10/24 早上從韋廷家出發，開瀚凱的RAV4往復興區，全程順暢。晚餐後回韋廷家過夜。",
   items:[
   {t:"09:30-11:30",cat:"hike",name:"高海拔森林浴｜東眼山國家森林遊樂區",desc:"走平緩的景觀步道，拿起望遠鏡觀察茂密柳杉林間的生態，享受舒適微涼的氣溫。",addr:"復興區霞雲里成福路600號",lat:24.8578,lng:121.2664},
   {t:"12:00-13:00",cat:"food",name:"在地午餐｜角板山形象商圈",desc:"廟口王家小吃（中正路85號，★4.7）、角板山平價小吃（中正路51號）。品嚐在地段木香菇與原民風味。",addr:"復興區澤仁里中正路周邊",lat:24.8327,lng:121.2333},
@@ -277,7 +277,7 @@ const DAYS=[
   ],
   tip:"晚餐後回韋廷家過夜，10/25 早上從韋廷家出發前往桃園市區。"},
  {no:2,date:"10/25",wd:"日",title:"桃園市區的城市綠洲與無死角夜景",img:IMG.d2,
-  route:"從韋廷家出發，開瀚凱的RAV4前往桃園大有特區周邊，結合完善的休閒步道與日式歷史建築。",
+  route:"從韋廷家（龍潭）出發，開瀚凱的RAV4前往桃園大有特區周邊，結合完善的休閒步道與日式歷史建築。",
   items:[
   {t:"09:30-11:30",cat:"hike",name:"全齡友善步道｜虎頭山公園",desc:"步道鋪設極為平整，林蔭茂密，是毫無負擔的綠色廊道。",addr:"桃園區龜山里公園路42號",lat:24.9955,lng:121.2935},
   {t:"12:00-13:30",cat:"food",name:"市區午餐｜大有特區高分美食",desc:"義匠義式湯麵（大有路443號，★4.8 創意濃郁湯麵）／Monday蔬食料理（大有路648號，★4.8 精緻蔬食）／島国洋食（寶山街210巷10號，日式職人料理）",addr:"桃園區大有特區（三選一）",lat:25.0085,lng:121.3062},
