@@ -154,7 +154,7 @@ img{max-width:100%}
 <div class="stats">
 <div class="stat"><b>3 天 2 夜</b>平緩步道・不爬山</div>
 <div class="stat"><b>3 大主題</b>山林瀑布／城市夜景／茶園丘陵</div>
-<div class="stat"><b>全程自駕</b>iRent 台中取車北上</div>
+<div class="stat"><b>10/23 晚</b>先到韋廷家</div>
 <div class="stat"><b>必備</b>雙筒望遠鏡</div>
 </div>
 </div></header>
@@ -199,7 +199,7 @@ img{max-width:100%}
 
 <section id="map"><div class="container">
 <div class="sec-title"><span class="no">03</span><h2>一鍵地圖匯入</h2></div>
-<p class="sec-sub">一次把 16 個行程地點（含 4 家餐廳）匯入你的地圖 App。</p>
+<p class="sec-sub">一次把 17 個行程地點（含 4 家餐廳）匯入你的地圖 App。</p>
 <div class="mapbox">
 <ol>
 <li>按下方 <b>下載行程 GeoJSON</b>，存成 <code>taoyuan-20261024.geojson</code></li>
@@ -210,7 +210,7 @@ img{max-width:100%}
 <button class="btn" onclick="downloadGeoJSON()">⬇ 下載行程 GeoJSON（16 點）</button>
 <a class="btn alt" id="gmaps-route" href="#" target="_blank">🗺 在 Google Maps 打開全線路徑</a>
 </div>
-<p class="map-note">點位依行程順序編號 1–16（D1 6 點 → D2 5 點 → D3 3 點 → 餐廳 4 點），匯入後地圖會自動串出順路動線。座標為路口級定位，實際以店家招牌為準。</p>
+<p class="map-note">點位依行程順序編號 0–16（韋廷家 → D1 5 點 → D2 5 點 → D3 3 點 → 餐廳 2 點 → 返程），匯入後地圖會自動串出順路動線。座標為路口級定位，實際以店家招牌為準。</p>
 </div>
 </div></section>
 
@@ -229,17 +229,17 @@ const IMG={
 };
 const DAYS=[
  {no:1,date:"10/24",wd:"六",title:"復興區山林瀑布與大溪茶香",img:IMG.d1,
-  route:"沿台7線由高海拔往平地開，傍晚抵達龍潭與韋廷會合，動線完全順暢。",
+  route:"10/23 晚先到韋廷家（台中）休息，10/24 早上從韋廷家出發北上，全程順暢。",
   items:[
   {t:"09:30-11:30",cat:"hike",name:"高海拔森林浴｜東眼山國家森林遊樂區",desc:"走平緩的景觀步道，拿起望遠鏡觀察茂密柳杉林間的生態，享受舒適微涼的氣溫。",addr:"復興區霞雲里成福路600號"},
   {t:"12:00-13:00",cat:"food",name:"在地午餐｜角板山形象商圈",desc:"廟口王家小吃（中正路85號，★4.7）、角板山平價小吃（中正路51號）。品嚐在地段木香菇與原民風味。",addr:"復興區澤仁里中正路周邊"},
   {t:"13:30-15:00",cat:"shot",name:"輕鬆賞瀑｜小烏來天空步道",desc:"避開園區中午休息時間，直接站在透明玻璃平台上近距離感受瀑布震撼，免除爬山勞頓。",addr:"復興區義盛里1鄰4-6號"},
   {t:"15:30-16:30",cat:"rest",name:"室內休憩｜大溪老茶廠",desc:"下山順路停靠，在充滿茶香的百年建築冷氣房內讓雙腿放鬆。",addr:"大溪區新峰里復興路二段732巷80號"},
-  {t:"17:30-19:30",cat:"food",name:"龍潭晚餐｜與韋廷的家庭聚餐",desc:"The畔 cafe&dining（金龍路8巷22號，精緻義式）／見山景觀咖啡餐廳（楊銅路二段719號，★4.9 無敵夜景）／大池Front 景觀 BISTRO&Cafe（中豐路上林段115巷11號2樓，網美餐酒館）",addr:"龍潭區（三選一，詳見餐廳清單）"}
+  {t:"17:30-19:30",cat:"food",name:"龍潭晚餐｜與韋廷的家庭聚餐",desc:"The畔 cafe&dining（金龍路8巷22號，精緻義式）／見山景觀咖啡餐廳（楊銅路二段719號，★4.9 無敵夜景）／大池Front 景觀 BISTRO&Cafe（中豐路上林段115巷11號2樓，網美餐酒館）",addr:"龍潭區（三選一，詳見餐廳清單）— 結束後回韋廷家過夜"}
   ],
-  tip:"傍晚 17:30 前務必抵達龍潭與韋廷會合；晚餐三選一建議提前訂位。"},
+  tip:"晚餐後回韋廷家過夜，10/25 早上從韋廷家出發前往桃園市區。"},
  {no:2,date:"10/25",wd:"日",title:"桃園市區的城市綠洲與無死角夜景",img:IMG.d2,
-  route:"行程集中於桃園大有特區周邊，結合完善的休閒步道與日式歷史建築。",
+  route:"從韋廷家出發，行程集中於桃園大有特區周邊，結合完善的休閒步道與日式歷史建築。",
   items:[
   {t:"09:30-11:30",cat:"hike",name:"全齡友善步道｜虎頭山公園",desc:"步道鋪設極為平整，林蔭茂密，是毫無負擔的綠色廊道。",addr:"桃園區龜山里公園路42號"},
   {t:"12:00-13:30",cat:"food",name:"市區午餐｜大有特區高分美食",desc:"義匠義式湯麵（大有路443號，★4.8 創意濃郁湯麵）／Monday蔬食料理（大有路648號，★4.8 精緻蔬食）／島国洋食（寶山街210巷10號，日式職人料理）",addr:"桃園區大有特區（三選一）"},
@@ -247,7 +247,7 @@ const DAYS=[
   {t:"16:00-17:30",cat:"shot",name:"絕佳展望｜虎頭山環保公園",desc:"傍晚登高，在草皮上用雙筒望遠鏡眺望夕陽與大桃園無死角百萬夜景。",addr:"桃園區成功路三段"},
   {t:"18:00-19:30",cat:"food",name:"質感晚餐｜浮島虎山 Söt Café Bistronömy",desc:"工業時尚風格的設計空間，供應多元創意料理與甜點，延續夜晚放鬆氛圍。",addr:"桃園區成功路三段18號"}
   ],
-  tip:"16:00 出發登虎頭山，約 17:30 全線日落，望遠鏡架好再上草皮。"},
+  tip:"16:00 出發登虎頭山，約 17:30 全線日落，望遠鏡架好再上草皮。晚餐後回韋廷家過夜。"},
  {no:3,date:"10/26",wd:"一",title:"楊梅茶園丘陵與客家庄風味",img:IMG.d3,
   route:"行程最為寬鬆的一天，深入體驗客家文化，午後悠閒返程。",
   items:[
@@ -256,7 +256,7 @@ const DAYS=[
   {t:"14:00-15:30",cat:"rest",name:"歐式庭園｜楊梅雅聞魅力博覽館",desc:"在玫瑰花園中喝杯下午茶，為這趟旅程畫下句點。",addr:"楊梅區中山北路一段21巷1號"},
   {t:"16:00",cat:"drive",name:"驅車南下返回台中",desc:"午後悠閒返程，iRent 還車前記滿油。",addr:"—"}
   ],
-  tip:"週一楊梅車流少，14:00 的下午茶時段建議訂位，16:00 出發回台中不塞車。"}
+  tip:"週一楊梅車流少，14:00 的下午茶時段建議訂位。16:00 出發回台中，先回韋廷家還車。"}
 ];
 
 function dayCard(d){
@@ -278,6 +278,7 @@ document.getElementById('daylist').innerHTML=DAYS.map(dayCard).join('');
 
 /* GeoJSON */
 const POINTS=[
+ {day:"D1",name:"00 韋廷家（住宿起點）",lat:24.1470,lng:120.6750},
  {day:"D1",name:"01 東眼山國家森林遊樂區",lat:24.8578,lng:121.2664},
  {day:"D1",name:"02 角板山形象商圈（午餐）",lat:24.8327,lng:121.2333},
  {day:"D1",name:"03 小烏來天空步道",lat:24.8663,lng:121.2292},
@@ -310,8 +311,8 @@ function downloadGeoJSON(){
  const d2=["24.9955,121.2935","25.0085,121.3062","25.0098,121.2983","24.9943,121.2962","24.9950,121.2975"];
  const d3=["24.9130,121.1500","24.9150,121.1580","24.9172,121.1545"];
  const legs=[d1,d2,d3].map(arr=>"origin="+arr[0]+"&destination="+arr[arr.length-1]+(arr.length>2?("&waypoints="+arr.slice(1,-1).join("|")):""));
- const url="https://www.google.com/maps/dir/"+d1.join("+via+")+"//"+d2.join("+via+")+"//"+d3.join("+via+")+"/"+encodeURIComponent("南下返回台中");
- document.getElementById('gmaps-route').href="https://www.google.com/maps/dir/"+encodeURIComponent("東眼山國家森林遊樂區")+"/"+encodeURIComponent("角板山")+"/"+encodeURIComponent("小烏來天空步道")+"/"+encodeURIComponent("大溪老茶廠")+"/"+encodeURIComponent("龍潭區")+"/"+encodeURIComponent("虎頭山公園")+"/"+encodeURIComponent("桃園神社")+"/"+encodeURIComponent("虎頭山環保公園")+"/"+encodeURIComponent("秀才登山步道")+"/"+encodeURIComponent("楊梅")+"/";
+ const url="https://www.google.com/maps/dir/"+d1.join("+via+")+"//"+d2.join("+via+")+"//"+d3.join("+via+")+"/"+encodeURIComponent("韋廷家");
+ document.getElementById('gmaps-route').href="https://www.google.com/maps/dir/"+encodeURIComponent("韋廷家（台中）")+"/"+encodeURIComponent("東眼山國家森林遊樂區")+"/"+encodeURIComponent("角板山")+"/"+encodeURIComponent("小烏來天空步道")+"/"+encodeURIComponent("大溪老茶廠")+"/"+encodeURIComponent("龍潭區")+"/"+encodeURIComponent("虎頭山公園")+"/"+encodeURIComponent("桃園神社")+"/"+encodeURIComponent("虎頭山環保公園")+"/"+encodeURIComponent("秀才登山步道")+"/"+encodeURIComponent("楊梅")+"/";
 })();
 
 /* drawer */
