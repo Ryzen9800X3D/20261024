@@ -143,7 +143,6 @@ img{max-width:100%}
 <a href="#d2">D2 桃園市區</a>
 <a href="#d3">D3 楊梅</a>
 <a href="#food">餐廳清單</a>
-<a href="#map">一鍵地圖匯入</a>
 </div>
 </div></nav>
 
@@ -156,7 +155,6 @@ img{max-width:100%}
 <a href="#d2" onclick="closeDrawer()">D2 桃園市區 <span class="ddate">10/25</span></a>
 <a href="#d3" onclick="closeDrawer()">D3 楊梅 <span class="ddate">10/26</span></a>
 <a href="#food" onclick="closeDrawer()">餐廳清單</a>
-<a href="#map" onclick="closeDrawer()">一鍵地圖匯入</a>
 </div>
 
 <header class="hero"><div class="container">
@@ -209,47 +207,6 @@ img{max-width:100%}
 </div>
 </div></section>
 
-<section id="map"><div class="container">
-<div class="sec-title"><span class="no">03</span><h2>一鍵地圖匯入</h2></div>
-<p class="sec-sub">每日獨立下載 GeoJSON，匯入 Google 我的地圖後自動串出順路動線。</p>
-
-<!-- D1 -->
-<div class="day-map">
-<h4>📅 D1（10/24 六）復興區山林瀑布與大溪茶香</h4>
-<div class="btnrow">
-<button class="btn" onclick="downloadGeoJSON('d1')">⬇ 下載 D1 行程 GeoJSON</button>
-<a class="btn alt" id="gmaps-d1" href="#" target="_blank">🗺 D1 全線 Google Maps 路徑</a>
-</div>
-</div>
-
-<!-- D2 -->
-<div class="day-map">
-<h4>📅 D2（10/25 日）桃園市區的城市綠洲與無死角夜景</h4>
-<div class="btnrow">
-<button class="btn" onclick="downloadGeoJSON('d2')">⬇ 下載 D2 行程 GeoJSON</button>
-<a class="btn alt" id="gmaps-d2" href="#" target="_blank">🗺 D2 全線 Google Maps 路徑</a>
-</div>
-</div>
-
-<!-- D3 -->
-<div class="day-map">
-<h4>📅 D3（10/26 一）楊梅茶園丘陵與客家庄風味</h4>
-<div class="btnrow">
-<button class="btn" onclick="downloadGeoJSON('d3')">⬇ 下載 D3 行程 GeoJSON</button>
-<a class="btn alt" id="gmaps-d3" href="#" target="_blank">🗺 D3 全線 Google Maps 路徑</a>
-</div>
-</div>
-
-<div class="mapbox">
-<ol>
-<li>按上方 <b>下載每日行程 GeoJSON</b>，存成 <code>taoyuan-dayX.geojson</code></li>
-<li>到 <b>Google 我的地圖</b>（mymaps.google.com）→「建立新地圖」→「匯入」→ 選擇該檔案</li>
-<li>或直接用手機 <b>Google Maps App</b> 搜尋 <b>「我的地點」</b>，也能匯入 geojson/kml</li>
-</ol>
-<p class="map-note">點位座標為路口級定位，實際以店家招牌為準。所有行程皆從韋廷家（龍潭）出發，每日結束後返回韋廷家。</p>
-</div>
-</div></section>
-
 <footer><div class="container">
 <div><b>2026 光復節連假・桃園三日登山</b>（10/24–10/26）｜Hermes Agent Ryzen 製</div>
 <div>車輛：瀚凱 RAV4 ｜ 住宿：韋廷家（桃園龍潭）</div>
@@ -264,10 +221,6 @@ const IMG={
  d2:"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/%E6%A1%83%E5%9C%92%E7%A5%9E%E7%A4%BE%E9%B3%A5%E5%B1%85.jpg/960px-%E6%A1%83%E5%9C%92%E7%A5%9E%E7%A4%BE%E9%B3%A5%E5%B1%85.jpg",
  d3:"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Views_from_Jioufen-04.2023-09-20.jpg/960px-Views_from_Jioufen-04.2023-09-20.jpg"
 };
-
-/* 韋廷家座標（桃園市龍潭區文化路1142巷6號；巷口定位，Google Maps 實測 2026-10-13） */
-const WEITING={lat:24.8599,lng:121.2510,name:"韋廷家（龍潭文化路1142巷6號）"};
-const WEITING_COORD="24.8599,121.2510";
 
 const DAYS=[
  {no:1,date:"10/24",wd:"六",title:"復興區山林瀑布與大溪茶香",img:IMG.d1,
@@ -324,58 +277,6 @@ function dayCard(d){
  </div></div>`;
 }
 document.getElementById('daylist').innerHTML=DAYS.map(dayCard).join('');
-
-/* GeoJSON per day */
-const DAY_POINTS={
- d1:[
-  {name:"01 東眼山國家森林遊樂區",lat:24.8578,lng:121.2664},
-  {name:"02 角板山形象商圈（午餐）",lat:24.8327,lng:121.2333},
-  {name:"03 小烏來天空步道",lat:24.8663,lng:121.2292},
-  {name:"04 大溪老茶廠",lat:24.8866,lng:121.2842},
-  {name:"05 龍潭（晚餐會合）",lat:24.8599,lng:121.2510}
- ],
- d2:[
-  {name:"06 虎頭山公園（上午步道）",lat:24.9955,lng:121.2935},
-  {name:"07 大有特區（午餐）",lat:25.0085,lng:121.3062},
-  {name:"08 桃園神社",lat:25.0098,lng:121.2983},
-  {name:"09 虎頭山環保公園（夜景）",lat:24.9943,lng:121.2962},
-  {name:"09a 虎頭山土雞城（晚餐）",lat:24.9950,lng:121.2975}
- ],
- d3:[
-  {name:"10 秀才登山步道",lat:24.9130,lng:121.1500},
-  {name:"11 楊梅市區（客家午餐）",lat:24.9150,lng:121.1580},
-  {name:"11a 八方園客家餐廳",lat:24.9090,lng:121.1560},
-  {name:"12 楊梅雅聞魅力博覽館",lat:24.9172,lng:121.1545},
-  {name:"13 高鐵桃園站（載賀百跟家禎）",lat:25.0150,lng:121.2144},
-  {name:"15 南下回家（彰化還車）",lat:24.0,lng:120.5}
- ]
-};
-
-function downloadGeoJSON(dayKey){
- const pts=DAY_POINTS[dayKey];
- const gj={type:"FeatureCollection",features:pts.map(p=>({type:"Feature",geometry:{type:"Point",coordinates:[p.lng,p.lat]},properties:{name:p.name,day:dayKey.toUpperCase()}}))};
- const blob=new Blob([JSON.stringify(gj)],{type:"application/geo+json"});
- const a=document.createElement('a');
- a.href=URL.createObjectURL(blob);
- a.download=`taoyuan-${dayKey}-20261024.geojson`;
- a.click();
- URL.revokeObjectURL(a.href);
-}
-
-/* Google Maps daily routes */
-(function(){
- /* D1: 韋廷家 → 東眼山 → 角板山 → 小烏來 → 大溪老茶廠 → 龍潭 */
- const d1Waypoints=["24.8578,121.2664","24.8327,121.2333","24.8663,121.2292","24.8866,121.2842","24.8599,121.2510"];
- document.getElementById('gmaps-d1').href="https://www.google.com/maps/dir/"+WEITING_COORD+"/"+d1Waypoints.join("/")+"/"+WEITING_COORD;
-
- /* D2: 韋廷家 → 虎頭山 → 大有特區 → 桃園神社 → 虎頭山環保公園 → 虎頭山土雞城 */
- const d2Waypoints=["24.9955,121.2935","25.0085,121.3062","25.0098,121.2983","24.9943,121.2962","24.9950,121.2975"];
- document.getElementById('gmaps-d2').href="https://www.google.com/maps/dir/"+WEITING_COORD+"/"+d2Waypoints.join("/")+"/"+WEITING_COORD;
-
- /* D3: 韋廷家 → 秀才登山 → 楊梅 → 八方園 → 雅聞博覽館 → 高鐵桃園站 → 韋廷家 → 回家 */
- const d3Waypoints=["24.9130,121.1500","24.9150,121.1580","24.9090,121.1560","24.9172,121.1545","25.0150,121.2144","24.8599,121.2510","24.0,120.5"];
- document.getElementById('gmaps-d3').href="https://www.google.com/maps/dir/"+WEITING_COORD+"/"+d3Waypoints.join("/");
-})();
 
 /* drawer */
 function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('drawer-overlay').classList.add('open')}
