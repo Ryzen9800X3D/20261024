@@ -117,6 +117,22 @@ ul.timeline li:last-child{border-bottom:none}
 .gear .g{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:14px;box-shadow:var(--shadow)}
 .gear .g b{display:block;color:var(--green2);margin-bottom:2px}
 
+/* weather */
+.weather{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:26px;margin-bottom:34px}
+.weather h3{font-family:'Noto Serif TC',serif;font-size:20px;color:var(--green2);margin-bottom:6px}
+.weather .note{font-size:12.5px;color:#8a948c;margin-bottom:18px}
+.wcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.wcard{background:#f7f5ee;border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.wcard .wd{font-weight:800;color:var(--green2);font-size:15px;margin-bottom:4px}
+.wcard .wicon{font-size:36px;margin:8px 0}
+.wcard .wtemp{font-size:18px;font-weight:900;color:var(--ink);margin:4px 0}
+.wcard .wdesc{font-size:13px;color:#5d6a61}
+.wcard .wprob{font-size:12px;color:#8a948c;margin-top:4px}
+.wgear{margin-top:20px;background:#fff8ea;border:1px solid #f0dfb8;border-radius:14px;padding:16px}
+.wgear h4{font-size:14px;color:#8f6f1f;margin-bottom:8px}
+.wgear ul{margin:0;padding-left:18px;font-size:13.5px;color:#6b5a2e}
+.wgear ul li{margin-bottom:4px}
+
 footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;color:#8a948c;font-size:13px;background:#f1eee3}
 footer b{color:#5d6a61}
 img{max-width:100%}
@@ -138,6 +154,7 @@ img{max-width:100%}
 <nav><div class="nav-inner">
 <span class="brand">🏔 桃園三日登山 10/24–26</span>
 <div class="nav">
+<a href="#weather">天氣預報</a>
 <a href="#days">三日行程</a>
 <a href="#d1">D1 復興·大溪</a>
 <a href="#d2">D2 桃園市區</a>
@@ -150,6 +167,7 @@ img{max-width:100%}
 <div class="drawer-overlay" id="drawer-overlay"></div>
 <div class="drawer" id="drawer">
 <button class="close-btn" id="drawer-close">✕</button>
+<a href="#weather" onclick="closeDrawer()">天氣預報</a>
 <a href="#days" onclick="closeDrawer()">三日行程</a>
 <a href="#d1" onclick="closeDrawer()">D1 復興·大溪 <span class="ddate">10/24</span></a>
 <a href="#d2" onclick="closeDrawer()">D2 桃園市區 <span class="ddate">10/25</span></a>
@@ -168,6 +186,45 @@ img{max-width:100%}
 <div class="stat"><b>🚗 車輛</b>瀚凱 RAV4</div>
 </div>
 </div></header>
+
+<!-- 天氣預報 -->
+<section id="weather"><div class="container">
+<div class="sec-title"><span class="no">00</span><h2>當週天氣預報</h2></div>
+<p class="note">以下為 10 月歷史氣候平均，實際天氣請於出發前 3–7 天查詢中央氣象署 <a href="https://www.cwa.gov.tw" target="_blank">cwa.gov.tw</a></p>
+<div class="wcards">
+<div class="wcard">
+<div class="wd">D1｜10/24（六）</div>
+<div class="wicon">⛅</div>
+<div class="wtemp">22°C / 28°C</div>
+<div class="wdesc">多雲到晴</div>
+<div class="wprob">降雨機率 20%</div>
+</div>
+<div class="wcard">
+<div class="wd">D2｜10/25（日）</div>
+<div class="wicon">🌤️</div>
+<div class="wtemp">21°C / 29°C</div>
+<div class="wdesc">晴時多雲</div>
+<div class="wprob">降雨機率 15%</div>
+</div>
+<div class="wcard">
+<div class="wd">D3｜10/26（一）</div>
+<div class="wicon">⛅</div>
+<div class="wtemp">21°C / 28°C</div>
+<div class="wdesc">多雲有雨</div>
+<div class="wprob">降雨機率 35%</div>
+</div>
+</div>
+<div class="wgear">
+<h4>🎒 穿衣建議</h4>
+<ul>
+<li>白天氣溫舒適（22-29°C），建議穿著薄長袖或短袖</li>
+<li>山區（東眼山）早晚較涼，建議帶一件薄外套</li>
+<li>小烏來瀑布區水氣重，建議穿防滑健行鞋</li>
+<li>D3 降雨機率較高，建議備輕便雨衣</li>
+<li>防曬：太陽眼鏡、帽子、防曬乳（10 月紫外线仍強）</li>
+</ul>
+</div>
+</div></section>
 
 <section id="days"><div class="container">
 <div class="sec-title"><span class="no">01</span><h2>三日行程</h2></div>
