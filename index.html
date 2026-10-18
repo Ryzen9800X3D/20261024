@@ -433,7 +433,7 @@ function dayCard(d){
   <button class="sw-btn alt" id="sw-${d.no}-backup" onclick="switchDay(${d.no},'backup')">🌀 颱風備案</button>
  </div>`:'';
 
- return `<div class="day" id="d${d.no}">
+ return `<div class="day" id="d${d.no}" data-orig-html="${origHtml.replace(/"/g,'&quot;')}">
  <div class="day-head"><img src="${d.img}" alt="${d.title}" loading="lazy">
  <div class="info"><div>
  <div class="date">DAY ${d.no}｜${d.date}（週${d.wd}）</div>
@@ -448,6 +448,28 @@ function dayCard(d){
  </div></div>`;
 }
 document.getElementById('daylist').innerHTML=DAYS.map(dayCard).join('');
+
+
+function switchDay(dayNo, mode){
+ const dayEl=document.getElementById(`d${dayNo}`);
+ const origHtml=dayEl.getAttribute('data-orig-html');
+ const backup=BACKUPS.find(b=>b.no===dayNo);
+ if(mode==='backup'&&backup){
+  const backupItems=backup.items.map(it=>({t:'—',cat:'backup',name:`${it.orig} → ${it.alt}`,desc:it.detail,addr:''}));
+  const backupHtml=backupItems.map(it=>{
+   return `<li><div class="tm">${it.t}</div><div class="what"><span class="cat ${it.cat}">${CATNAME[it.cat]}</span><b>${it.name}</b><div>${it.desc}</div></li>`;
+  }).join('');
+  document.getElementById(`tl-${dayNo}`).innerHTML=backupHtml;
+  dayEl.querySelector('.route-line').innerHTML=`🚗 ${backup.route}`;
+  document.getElementById(`sw-${dayNo}-orig`).classList.remove('active');
+  document.getElementById(`sw-${dayNo}-backup`).classList.add('active');
+ }else{
+  if(origHtml) document.getElementById(`tl-${dayNo}`).innerHTML=origHtml;
+  dayEl.querySelector('.route-line').innerHTML=`🚗 ${DAYS.find(d=>d.no===dayNo).route}`;
+  document.getElementById(`sw-${dayNo}-orig`).classList.add('active');
+  document.getElementById(`sw-${dayNo}-backup`).classList.remove('active');
+ }
+}
 
 
 function backupCard(b){
