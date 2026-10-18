@@ -452,10 +452,11 @@ document.getElementById('daylist').innerHTML=DAYS.map(dayCard).join('');
 
 function backupCard(b){
  const rows=b.items.map(it=>`<tr><td class="orig">${it.orig}</td><td class="alt">→ ${it.alt}</td></tr><tr><td colspan="2" style="font-size:12.5px;color:#6c7a70">${it.detail}</td></tr>`).join('');
+ const boxId=`backup-box-${b.no}`;
  return `<div class="day" style="margin-bottom:24px">
  <div class="day-body">
- <button class="backup-toggle" onclick="this.nextElementSibling.classList.toggle('show')">🌀 ${b.title}（點擊展開）</button>
- <div class="backup-box">
+ <button class="backup-toggle" onclick="document.getElementById('${boxId}').classList.toggle('show')">🌀 ${b.title}（點擊展開）</button>
+ <div class="backup-box" id="${boxId}">
  <h4>🔄 原行程 vs 備案對照</h4>
  <table class="backup-table">
  <tr><th>原行程（戶外）</th><th>🔴 備案（室內）</th></tr>
