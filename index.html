@@ -73,7 +73,6 @@ ul.timeline li:last-child{border-bottom:none}
 .cat.rest{background:#5b7fa6}
 .cat.shot{background:#9a6fb8}
 .cat.drive{background:#7d8a80}
-.cat.backup{background:var(--red)}
 .addr{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#2e6e52,#1e4d38);color:#fff;border:none;border-radius:24px;padding:8px 18px;font-size:13px;cursor:pointer;box-shadow:0 2px 8px rgba(46,110,82,.3);margin-top:8px;max-width:100%;text-decoration:none;transition:all .2s ease}
 .addr:hover{background:linear-gradient(135deg,#1e4d38,#153a2a);box-shadow:0 4px 12px rgba(46,110,82,.4);transform:translateY(-1px)}
 .addr .pin{font-size:18px;line-height:1}
@@ -97,32 +96,7 @@ ul.timeline li:last-child{border-bottom:none}
 .food-day h4{font-family:'Noto Serif TC',serif;font-size:17px;color:var(--green2);margin-bottom:10px;display:flex;align-items:center;gap:10px}
 .food-day h4 .dchip{font-size:12px;background:var(--green);color:#fff;border-radius:99px;padding:2px 12px;font-family:'Noto Sans TC'}
 
-/* day switcher */
-.day-switch{display:flex;align-items:center;gap:8px;margin-bottom:16px}
-.day-switch .sw-btn{padding:6px 14px;border-radius:99px;border:2px solid var(--green);background:var(--card);color:var(--green2);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s ease}
-.day-switch .sw-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
-.day-switch .sw-btn.alt{border-color:var(--red);color:var(--red)}
-.day-switch .sw-btn.alt.active{background:var(--red);color:#fff;border-color:var(--red)}
-.day-switch .sw-icon{font-size:14px;margin-left:4px}
-/* backup view styles */
-.day.backup-mode .route-line{border-left-color:var(--red);background:#fff5f5}
-.day.backup-mode .tip{background:#fff5f5;border-color:#f5c6c0;color:var(--red)}
-.day.backup-mode .tip b{color:var(--red)}
 
-/* backup section */
-.backup-toggle{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:none;border-radius:99px;padding:6px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;margin-bottom:16px;transition:all .2s ease}
-.backup-toggle:hover{background:#9a2f25}
-.backup-box{display:none;background:#fff5f5;border:2px solid #f5c6c0;border-radius:16px;padding:18px;margin-top:12px}
-.backup-box.show{display:block}
-.backup-box h4{font-size:15px;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.backup-table{width:100%;border-collapse:collapse;font-size:13.5px}
-.backup-table th{background:#fef2f2;color:var(--red);padding:8px 12px;text-align:left;font-weight:700;border-bottom:2px solid #f5c6c0}
-.backup-table td{padding:8px 12px;border-bottom:1px solid #f0e0dc;vertical-align:top}
-.backup-table tr:last-child td{border-bottom:none}
-.backup-table .orig{color:#6c7a70}
-.backup-table .alt{color:var(--red);font-weight:600}
-.backup-route{margin-top:14px;background:#fef9f0;border:1px solid #f0dfb8;border-radius:10px;padding:12px 16px;font-size:13px;color:#6b5a2e}
-.backup-route b{color:#8f6f1f}
 
 /* gear */
 .gear{display:flex;gap:12px;flex-wrap:wrap}
@@ -145,12 +119,6 @@ ul.timeline li:last-child{border-bottom:none}
 .wgear ul{margin:0;padding-left:18px;font-size:13.5px;color:#6b5a2e}
 .wgear ul li{margin-bottom:4px}
 
-/* emergency */
-.emergency{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:26px;margin-bottom:34px}
-.emergency h3{font-family:'Noto Serif TC',serif;font-size:20px;color:var(--green2);margin-bottom:12px}
-.emergency table{width:100%;border-collapse:collapse;font-size:13.5px}
-.emergency th{background:#f7f5ee;padding:8px 12px;text-align:left;font-weight:700;border-bottom:2px solid var(--line)}
-.emergency td{padding:8px 12px;border-bottom:1px solid var(--line)}
 
 footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;color:#8a948c;font-size:13px;background:#f1eee3}
 footer b{color:#5d6a61}
@@ -165,8 +133,6 @@ img{max-width:100%}
  .tm{white-space:normal}
  .day-head{height:170px}
  .day-head h3{font-size:19px}
- .backup-table{font-size:12px}
- .backup-table th,.backup-table td{padding:6px 8px}
 }
 </style>
 </head>
@@ -180,7 +146,6 @@ img{max-width:100%}
 <a href="#d1">D1 復興·大溪</a>
 <a href="#d2">D2 桃園市區</a>
 <a href="#d3">D3 楊梅</a>
-<a href="#backup">🌀 颱風備案</a>
 <a href="#food">餐廳清單</a>
 </div>
 </div></nav>
@@ -194,7 +159,6 @@ img{max-width:100%}
 <a href="#d1" onclick="closeDrawer()">D1 復興·大溪 <span class="ddate">10/24</span></a>
 <a href="#d2" onclick="closeDrawer()">D2 桃園市區 <span class="ddate">10/25</span></a>
 <a href="#d3" onclick="closeDrawer()">D3 楊梅 <span class="ddate">10/26</span></a>
-<a href="#backup" onclick="closeDrawer()">🌀 颱風備案</a>
 <a href="#food" onclick="closeDrawer()">餐廳清單</a>
 </div>
 
@@ -207,7 +171,6 @@ img{max-width:100%}
 <div class="stat"><b>3 大主題</b>山林瀑布／城市夜景／茶園丘陵</div>
 <div class="stat"><b>10/23 晚</b>先到韋廷家（桃園龍潭）</div>
 <div class="stat"><b>🚗 車輛</b>瀚凱 RAV4</div>
-<div class="stat"><b>🌀 備案</b>室內景點完整備妥</div>
 </div>
 </div></header>
 
